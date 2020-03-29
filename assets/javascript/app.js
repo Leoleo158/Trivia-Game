@@ -1,6 +1,6 @@
 //var for timer
 
-var countdown = 60;
+var countdown = 40;
 var intervalId;
 
 //var creation
@@ -12,9 +12,9 @@ var unanswered = 0;
 //Questions and then anwser list array
 
 var questions = [{
-    question: "Which team has the most playoff appreances in NBA History?",
+    question: "Which team has the best fan?",
     answerList: ["San Antonio Spurs", "Boston Celtics", "Los Angeles Lakers", "Chicago Bulls"],
-    answer: 2
+    answer: 0
 },{
     question: "What NBA team has the most championships?",
     answerList: ["Los Angeles Lakers", "Boston Celtics", "Chicago Bulls", "Golden State Warriors"],
@@ -49,7 +49,7 @@ $("#start").on("click", function()  {
     $(this).hide();
 
     //display initial counter
-    $("#timer").html("<h2>Time Remaining: 60 Seconds</h2>" + "<br>");
+    $("#timer").html("<h2>Time Remaining: 40 Seconds</h2>" + "<br>");
     //run countown
     counterDown();
     // Display questions
@@ -105,7 +105,7 @@ $("#start").on("click", function()  {
      );
    
     //Submit button being established as finished back to html 
-    $("#submit").html("<button id= 'finished' class='btn>Finished</button");
+    $("#submit").html("<button id='done' class='btn btn-primary'>Submit!</button>");
 
     //Click event runs scoreKeep and displayResults functions
     $("#done").on("click", function(){
@@ -113,7 +113,8 @@ $("#start").on("click", function()  {
         scoreKeep();
 
         displayResults();
-    })
+    });
+});
 
 
 //countown function for timer to countdown
@@ -122,11 +123,19 @@ function counterDown() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
 }
+
 function decrement() {
 
     countdown--;
 
-    $("#timer").html("<h2> Time Remaining: " + countdown + "Seconds </h2>" + "<br>");
+    $("#timer").html("<h2> Time Remaining: " + countdown + " Seconds </h2>" + "<br>");
+    //stop counter if it reaches 0
+    if (countdown === 0) {
+        stopCount();
+
+        // scoreKeep();
+        displayResults();
+    }
 }
 
 function stopCount() {
@@ -182,45 +191,44 @@ function scoreKeep(){
     }
     if(userAnswer2 === undefined) {
         unanswered++;
-    } else if (userAnswer2 === question[1].answer){
+    } else if (userAnswer2 == questions[1].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
     if(userAnswer3 === undefined) {
         unanswered++;
-    } else if (userAnswer3 === question[2].answer){
+    } else if (userAnswer3 == questions[2].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
     if(userAnswer4 === undefined) {
         unanswered++;
-    } else if (userAnswer4 === question[3].answer){
+    } else if (userAnswer4 == questions[3].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
     if(userAnswer5 === undefined) {
         unanswered++;
-    } else if (userAnswer5 === question[4].answer){
+    } else if (userAnswer5 == questions[4].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
     if(userAnswer6 === undefined) {
         unanswered++;
-    } else if (userAnswer6 === question[5].answer){
+    } else if (userAnswer6 == questions[5].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
     if(userAnswer7 === undefined) {
         unanswered++;
-    } else if (userAnswer7 === question[6].answer){
+    } else if (userAnswer7 == questions[6].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
 }
-})
