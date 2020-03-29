@@ -47,14 +47,14 @@ var questions = [{
 
 //have start button start after it's clicked
 
-$("#start").on("click"), function() {
+$("#start").on("click", function()  {
     //hide start button after it's clicked
     $(this).hide();
 
     //display initial counter
     $("#timer").html("<h2>Time Remaining: 60 Seconds</h2>" + "<br>");
     //run countown
-    countdown();
+    counterDown();
     // Display questions
     // Question 1
     $("#question1").html("<h3>" + questions[0].question + "</h3>");
@@ -113,9 +113,17 @@ $("#start").on("click"), function() {
         + "<input type='radio' name='answer3' value='2'>" + "<label>" + questions[7].answerList[2] + "</label>"
         + "<input type='radio' name='answer3' value='3'>" + "<label>" + questions[7].answerList[3] + "</label><br><br>"
     );
-}
+});
     //Submit button being established as finished back to html 
     $("#submit").html("<button id= 'finished' class='btn>Finished</button");
+
+    //Click event runs scoreKeep and displayResults functions
+    $("#done").on("click", function(){
+        
+        scoreKeep();
+
+        displayResults();
+    })
 
 
 //countown function for timer to countdown
@@ -172,8 +180,7 @@ function scoreKeep(){
     var userAnswer7 = $("input[name='answer7']:checked").val();
     var userAnswer8 = $("input[name='answer8']:checked").val();
 
-    //now keep score for all questions
-    //Q1
+    //now keep score for all questions and answers
     if(userAnswer1 === undefined) {
         unanswered++;
     } else if (userAnswer1 === question[0].answer){
@@ -181,51 +188,51 @@ function scoreKeep(){
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer2 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer2 === question[1].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer3 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer3 === question[2].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer4 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer4 === question[3].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer5 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer5 === question[4].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer6 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer6 === question[5].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer7 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer7 === question[6].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer1 === undefined) {
+    if(userAnswer8 === undefined) {
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer8 === question[7].answer){
         correctAnswers++;
     } else {
         incorrectAnswers++;
