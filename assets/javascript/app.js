@@ -12,7 +12,7 @@ var unanswered = 0;
 //Questions and then anwser list array
 
 var questions = [{
-    question: "Which team has the best fan?",
+    question: "Which team has the best fanbase?",
     answerList: ["San Antonio Spurs", "Boston Celtics", "Los Angeles Lakers", "Chicago Bulls"],
     answer: 0
 },{
@@ -134,6 +134,7 @@ function decrement() {
         stopCount();
 
         // scoreKeep();
+        scoreKeep();
         displayResults();
     }
 }
