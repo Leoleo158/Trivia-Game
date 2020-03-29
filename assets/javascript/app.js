@@ -163,6 +163,8 @@ function displayResults(){
     $("#answer7").hide();
     $("#submit").hide();
 
+    stopCount();
+
     $("#resultsMessage").html("<h3>Congrats you're done!</h3>");
     $("#correct").html("Correct Answers: " + correctAnswers);
     $("#incorrect").html("Incorrect Answers: " + incorrectAnswers);
