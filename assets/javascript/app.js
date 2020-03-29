@@ -172,5 +172,63 @@ function scoreKeep(){
     var userAnswer7 = $("input[name='answer7']:checked").val();
     var userAnswer8 = $("input[name='answer8']:checked").val();
 
+    //now keep score for all questions
+    //Q1
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+    if(userAnswer1 === undefined) {
+        unanswered++;
+    } else if (userAnswer1 === question[0].answer){
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
 }
   
