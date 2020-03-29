@@ -12,7 +12,7 @@ var unanswered = 0;
 //Questions and then anwser list array
 
 var questions = [{
-    quesion: "What franchise has played in the most NBA finals since 1947?",
+    question: "Which team has the most playoff appreances in NBA History?",
     answerList: ["San Antonio Spurs", "Boston Celtics", "Los Angeles Lakers", "Chicago Bulls"],
     answer: 2
 },{
@@ -28,7 +28,7 @@ var questions = [{
     answerList: ["Lebron James", "Kobe Bryant", "Michael Jordan", "Kareem Abdul-Jabbar", "Wilt Chamberlain"],
     answer: 4
 },{
-    question: "Which NBA player stars in Space Jame?",
+    question: "Which NBA player stars in Space Jam?",
     answerList: ["Lebron James", "Kobe Bryant", "Michael Jordan", "Tim Duncan"],
     answer: 2
 },{
@@ -39,10 +39,7 @@ var questions = [{
     question: "Which NBA player was the MVP of the regular season in 2011?",
     answerList: ["Lebron James", "Kobe Bryant", "Tim Duncan", "Derick Rose"],
     answer: 3
-},{
-    question: "How many Championship rings does Bill Russell have?",
-    answerList: ["5", "11", "8", "2"],
-    answer: 1
+
 }];
 
 //have start button start after it's clicked
@@ -72,7 +69,7 @@ $("#start").on("click", function()  {
     );
     //Question 3
     $("#question3").html("<h3>" + questions[2].question + "</h3>");
-    $("#answer1").html("<input type='radio' name='answer3' value='0'>" + "<label>" + questions[2].answerList[0] + "</label>"
+    $("#answer3").html("<input type='radio' name='answer3' value='0'>" + "<label>" + questions[2].answerList[0] + "</label>"
         + "<input type='radio' name='answer3' value='1'>" + "<label>" + questions[2].answerList[1] + "</label>"
         + "<input type='radio' name='answer3' value='2'>" + "<label>" + questions[2].answerList[2] + "</label>"
         + "<input type='radio' name='answer3' value='3'>" + "<label>" + questions[2].answerList[3] + "</label><br><br>"
@@ -92,28 +89,21 @@ $("#start").on("click", function()  {
         + "<input type='radio' name='answer5' value='2'>" + "<label>" + questions[4].answerList[2] + "</label>"
         + "<input type='radio' name='answer5' value='3'>" + "<label>" + questions[4].answerList[3] + "</label><br><br>"
     );
-    //Q6
+    // Question 6
     $("#question6").html("<h3>" + questions[5].question + "</h3>");
     $("#answer6").html("<input type='radio' name='answer6' value='0'>" + "<label>" + questions[5].answerList[0] + "</label>"
-        + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[5].answerList[1] + "</label>"
-        + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[5].answerList[2] + "</label>"
-        + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[5].answerList[3] + "</label><br><br>"
-    );
-    //Q7
-    $("#question7").html("<h3>" + questions[6].question + "</h3>");
-    $("#answer7").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
-        + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
-        + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
-        + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
-    );
-    //Q8
-    $("#question8").html("<h3>" + questions[7].question + "</h3>");
-    $("#answer8").html("<input type='radio' name='answer8' value='0'>" + "<label>" + questions[7].answerList[0] + "</label>"
-        + "<input type='radio' name='answer3' value='1'>" + "<label>" + questions[7].answerList[1] + "</label>"
-        + "<input type='radio' name='answer3' value='2'>" + "<label>" + questions[7].answerList[2] + "</label>"
-        + "<input type='radio' name='answer3' value='3'>" + "<label>" + questions[7].answerList[3] + "</label><br><br>"
-    );
-});
+         + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[5].answerList[1] + "</label>"
+         + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[5].answerList[2] + "</label>"
+         + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[5].answerList[3] + "</label><br><br>"
+     );
+     // Question 7
+     $("#question7").html("<h3>" + questions[6].question + "</h3>");
+     $("#answer7").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
+         + "<input type='radio' name='answer7' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
+         + "<input type='radio' name='answer7' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
+         + "<input type='radio' name='answer7' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
+     );
+   
     //Submit button being established as finished back to html 
     $("#submit").html("<button id= 'finished' class='btn>Finished</button");
 
@@ -178,14 +168,16 @@ function scoreKeep(){
     var userAnswer5 = $("input[name='answer5']:checked").val();
     var userAnswer6 = $("input[name='answer6']:checked").val();
     var userAnswer7 = $("input[name='answer7']:checked").val();
-    var userAnswer8 = $("input[name='answer8']:checked").val();
 
     //now keep score for all questions and answers
-    if(userAnswer1 === undefined) {
+    if (userAnswer1 === undefined) {
+
         unanswered++;
-    } else if (userAnswer1 === question[0].answer){
+    } else if (userAnswer1 == questions[0].answer) {
+
         correctAnswers++;
     } else {
+
         incorrectAnswers++;
     }
     if(userAnswer2 === undefined) {
@@ -230,12 +222,5 @@ function scoreKeep(){
     } else {
         incorrectAnswers++;
     }
-    if(userAnswer8 === undefined) {
-        unanswered++;
-    } else if (userAnswer8 === question[7].answer){
-        correctAnswers++;
-    } else {
-        incorrectAnswers++;
-    }
 }
-  
+})
