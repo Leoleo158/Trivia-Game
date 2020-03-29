@@ -1,6 +1,6 @@
 //var for timer
 
-var counter = 60;
+var countdown = 60;
 var intervalId;
 
 //var creation
@@ -83,19 +83,57 @@ $("#start").on("click"), function() {
         + "<input type='radio' name='answer4' value='1'>" + "<label>" + questions[3].answerList[1] + "</label>"
         + "<input type='radio' name='answer4' value='2'>" + "<label>" + questions[3].answerList[2] + "</label>"
         + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[3].answerList[3] + "</label>"
-        + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[3].answerList[4] + "</label><br><br>"
-         
+        + "<input type='radio' name='answer4' value='4'>" + "<label>" + questions[3].answerList[4] + "</label><br><br>"
     );
-
+    //Q5
+    $("#question5").html("<h3>" + questions[4].question + "</h3>");
+    $("#answer5").html("<input type='radio' name='answer5' value='0'>" + "<label>" + questions[4].answerList[0] + "</label>"
+        + "<input type='radio' name='answer5' value='1'>" + "<label>" + questions[4].answerList[1] + "</label>"
+        + "<input type='radio' name='answer5' value='2'>" + "<label>" + questions[4].answerList[2] + "</label>"
+        + "<input type='radio' name='answer5' value='3'>" + "<label>" + questions[4].answerList[3] + "</label><br><br>"
+    );
+    //Q6
+    $("#question6").html("<h3>" + questions[5].question + "</h3>");
+    $("#answer6").html("<input type='radio' name='answer6' value='0'>" + "<label>" + questions[5].answerList[0] + "</label>"
+        + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[5].answerList[1] + "</label>"
+        + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[5].answerList[2] + "</label>"
+        + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[5].answerList[3] + "</label><br><br>"
+    );
+    //Q7
+    $("#question7").html("<h3>" + questions[6].question + "</h3>");
+    $("#answer7").html("<input type='radio' name='answer7' value='0'>" + "<label>" + questions[6].answerList[0] + "</label>"
+        + "<input type='radio' name='answer6' value='1'>" + "<label>" + questions[6].answerList[1] + "</label>"
+        + "<input type='radio' name='answer6' value='2'>" + "<label>" + questions[6].answerList[2] + "</label>"
+        + "<input type='radio' name='answer6' value='3'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
+    );
+    //Q8
+    $("#question8").html("<h3>" + questions[7].question + "</h3>");
+    $("#answer8").html("<input type='radio' name='answer8' value='0'>" + "<label>" + questions[7].answerList[0] + "</label>"
+        + "<input type='radio' name='answer3' value='1'>" + "<label>" + questions[7].answerList[1] + "</label>"
+        + "<input type='radio' name='answer3' value='2'>" + "<label>" + questions[7].answerList[2] + "</label>"
+        + "<input type='radio' name='answer3' value='3'>" + "<label>" + questions[7].answerList[3] + "</label><br><br>"
+    );
 }
+    //Submit button being established as finished back to html 
+    $("#submit").html("<button id= 'finished' class='btn>Finished</button");
+
 
 //countown function for timer to countdown
-var countdown = setInterval(function(){
-    if(counter <= 0){
-      clearInterval(downloadTimer);
-      document.getElementById("timer").innerHTML = "Times up!";
-    } else {
-      document.getElementById("timer").innerHTML = counter + " seconds remaining";
-    }
-    counter -= 1;
-  }, 1000);
+function counterDown() {
+
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+}
+function decrement() {
+
+    countdown--;
+
+    $("#timer").html("<h2> Time Remaining: " + countdown + "Seconds </h2>" + "<br>");
+}
+
+function stopCount() {
+
+    
+}
+
+  
