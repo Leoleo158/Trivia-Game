@@ -155,6 +155,22 @@ function displayResults(){
     $("#question7").hide();
     $("#answer7").hide();
     $("#submit").hide();
-}
 
+    $("#resultsMessage").html("<h3>Congrats you're done!</h3>");
+    $("#correct").html("Correct Answers: " + correctAnswers);
+    $("#incorrect").html("Incorrect Answers: " + incorrectAnswers);
+    $("#unanswered").html("Unanswered: " + unanswered);
+}
+// Function keeps score in terms of correct, incorrect, and unanswered
+function scoreKeep(){
+    var userAnswer1 = $("input[name='answer1']:checked").val();
+    var userAnswer2 = $("input[name='answer2']:checked").val();
+    var userAnswer3 = $("input[name='answer3']:checked").val();
+    var userAnswer4 = $("input[name='answer4']:checked").val();
+    var userAnswer5 = $("input[name='answer5']:checked").val();
+    var userAnswer6 = $("input[name='answer6']:checked").val();
+    var userAnswer7 = $("input[name='answer7']:checked").val();
+    var userAnswer8 = $("input[name='answer8']:checked").val();
+
+}
   
