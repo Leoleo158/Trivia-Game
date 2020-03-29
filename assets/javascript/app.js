@@ -133,7 +133,28 @@ function decrement() {
 
 function stopCount() {
 
-    
+    //clear interval
+    clearInterval(intervalId);
+}
+
+//function to display results ONLY
+function displayResults(){
+    $("#time").hide();
+    $("#question1").hide();
+    $("#answer1").hide();
+    $("#question2").hide();
+    $("#answer2").hide();
+    $("#question3").hide();
+    $("#answer3").hide();
+    $("#question4").hide();
+    $("#answer4").hide();
+    $("#question5").hide();
+    $("#answer5").hide();
+    $("#question6").hide();
+    $("#answer6").hide();
+    $("#question7").hide();
+    $("#answer7").hide();
+    $("#submit").hide();
 }
 
   
